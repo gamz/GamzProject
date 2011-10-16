@@ -1,0 +1,20 @@
+parameters:
+
+    database_driver:   pdo_mysql
+    database_host:     localhost
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
+
+    assetic_compass:   /var/lib/gems/1.8/gems/compass-0.11.5/bin/compass
+    assetic_node:      /opt/node/bin/node
+    assetic_coffee:    /opt/node/bin/coffee
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
