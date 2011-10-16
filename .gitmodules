@@ -1,0 +1,3 @@
+[submodule "src/Gamz/PuyoBundle"]
+	path = src/Gamz/PuyoBundle
+	url = git@github.com:gamz/GamzPuyoBundle.git
