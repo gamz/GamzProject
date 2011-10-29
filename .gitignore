@@ -1,4 +1,6 @@
 .idea
 /app/cache
 /app/logs
+/app/config/parameters.yml
 /vendor
+/web/*_dev.php
