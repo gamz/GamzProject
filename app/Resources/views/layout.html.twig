@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+    <head>
+
+        <meta charset="utf-8" />
+
+        <title>{# page('meta.title') #}</title>
+        <meta name="description" content="{# page('meta.description') #}" />
+        <meta name="keywords" content="{# page('meta.keywords') #}" />
+
+        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+        <meta name="DC.title" lang="{{ app.request.locale }}" content="{# page('meta.title') #}" />
+        <meta name="DC.description" lang="{{ app.request.locale }}" content="{# page('meta.description') #}" />
+        <meta name="DC.subject" lang="{{ app.request.locale }}" content="{# page('meta.keywords') #}" />
+
+        <meta name="author" content="Jean-François Simon - http://jfsimon.fr" />
+        <meta name="DC.creator" content="Jean-François Simon - http://jfsimon.fr" />
+
+        {% block assets %}{% endblock %}
+
+    </head>
+    <body>
+
+        <header>
+            {% block header %}
+            {% endblock %}
+        </header>
+
+        <section id="content">
+            {% block content %}
+            {% endblock %}
+        </section>
+
+        <footer>
+            {% block footer %}
+            {% endblock %}
+        </footer>
+
+    </body>
+</html>
