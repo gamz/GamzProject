@@ -23,7 +23,6 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    read_from:      %kernel.root_dir%/../web/assets
     filters:
         compass:
             bin:    %assetic_compass%

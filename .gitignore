@@ -4,3 +4,4 @@
 /app/config/parameters.yml
 /vendor
 /web/*_dev.php
+/web/media/puyo

@@ -31,13 +31,7 @@ abstract class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
-    }
-
-    protected function getKernelParameters()
-    {
-        return array_merge(parent::getKernelParameters(), array(
-            'kernel.config_dir' => realpath(__DIR__.'/../src/Gamz/'.ucfirst(GAME).'Bundle/Resources/config'),
-        ));
+        $loader->load(__DIR__.'/../src/Gamz/'.ucfirst(GAME).'Bundle/Resources/config/config.yml');
     }
 
     public function getCacheDir()
