@@ -1,6 +1,6 @@
 [submodule "src/Gamz/PuyoBundle"]
 	path = src/Gamz/PuyoBundle
 	url = git@github.com:gamz/GamzPuyoBundle.git
-[submodule "src/Gamz/TypefastrBundle"]
-	path = src/Gamz/TypefastrBundle
-	url = git@github.com:gamz/GamzTypefastrBundle.git
+[submodule "src/Gamz/TypeBundle"]
+	path = src/Gamz/TypeBundle
+	url = git@github.com:gamz/GamzTypeBundle.git

@@ -1,0 +1,57 @@
+{% extends "::layout.html.twig" %}
+
+{% block assets %}
+
+    <link href="http://fonts.googleapis.com/css?family=Marvel:700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Rosario" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Syncopate:700" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+
+    {% stylesheets filter="compass" output="media/puyo/layout.css"
+        "@GamzPuyoBundle/Resources/assets/styles/layout.skeleton.sass"
+        "@GamzPuyoBundle/Resources/assets/styles/layout.header.sass"
+        "@GamzPuyoBundle/Resources/assets/styles/layout.footer.sass"
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+
+    {% javascripts filter="coffee" output="media/puyo/layout.js"
+        "@GamzPuyoBundle/Resources/assets/scripts/layout.coffee"
+    %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+{% endblock %}
+
+{% block header %}
+
+    <h1>ぷよぷよ</h1>
+
+    {% macro menu_item(name, label, path, current) %}
+        <li class="{{ name }}{% if current %} current{% endif %}">
+            <a{% if path %} href="{{ path }}"{% endif %}>{{ label }}</a>
+        </li>
+    {% endmacro %}
+
+    <ul id="menu">
+        {{ _self.menu_item('game',    'New game',   path('puyo_game_modes'), currentMenu is defined and currentMenu == 'game') }}
+        {{ _self.menu_item('scores',  'Hi scores',  null, currentMenu is defined and currentMenu == 'scores') }}
+        {{ _self.menu_item('profile', 'My profile', null, currentMenu is defined and currentMenu == 'profile') }}
+        {{ _self.menu_item('events',  'My events',  null, currentMenu is defined and currentMenu == 'friends') }}
+        {{ _self.menu_item('wish',    'Wish box',   null, currentMenu is defined and currentMenu == 'wish') }}
+    </ul>
+
+{% endblock %}
+
+{% block footer %}
+
+    <p>
+        Powered by
+        <a target="_blank" href="http://symfony.com">Symfony2</a>,
+        <a target="_blank" href="http://jashkenas.github.com/coffee-script/">CoffeeScript</a>,
+        <a target="_blank" href="http://raphaeljs.com">Raphaël</a>,
+        <a target="_blank" href="http://compass-style.org/">Compass</a> &
+        <a target="_blank" href="http://jquery.com/">jQuery</a>
+    </p>
+
+{% endblock %}

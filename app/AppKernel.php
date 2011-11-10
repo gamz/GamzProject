@@ -3,7 +3,7 @@
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 
-abstract class AppKernel extends Kernel
+class AppKernel extends Kernel
 {
     public function registerBundles()
     {
@@ -17,6 +17,9 @@ abstract class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Gamz\PuyoBundle\GamzPuyoBundle(),
+            new Gamz\TypeBundle\GamzTypeBundle(),
+            new Gamz\GamzBundle\GamzGamzBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -31,11 +34,10 @@ abstract class AppKernel extends Kernel
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
-        $loader->load(__DIR__.'/../src/Gamz/'.ucfirst(GAME).'Bundle/Resources/config/config.yml');
     }
 
     public function getCacheDir()
     {
-        return $this->rootDir.'/cache/'.GAME.'/'.$this->environment;
+        return $this->rootDir.'/cache/'.$this->environment;
     }
 }

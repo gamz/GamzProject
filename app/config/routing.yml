@@ -1,3 +1,11 @@
 _internal:
     resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
     prefix:   /_internal
+
+_gamz:
+    resource: "@GamzGamzBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_puyo:
+    resource: "@GamzPuyoBundle/Resources/config/routing.yml"
+    prefix:   /puyo
